@@ -267,7 +267,7 @@
 		45675DFC5DFCA8A77C135D1D /* Pods-Expo Go (main)-Expo Go.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Expo Go (main)-Expo Go.release.xcconfig"; path = "Target Support Files/Pods-Expo Go (main)-Expo Go/Pods-Expo Go (main)-Expo Go.release.xcconfig"; sourceTree = "<group>"; };
 		70D1A518C4DFB7D94147AC4B /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-Expo Go/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		71773906C5EB4CA89B3A271F /* Pods-Expo Go (main)-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Expo Go (main)-Tests.debug.xcconfig"; path = "Target Support Files/Pods-Expo Go (main)-Tests/Pods-Expo Go (main)-Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		78CEE2C01ACD07D70095B124 /* Expo Go.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Expo Go.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78CEE2C01ACD07D70095B124 /* Rork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78CEE2D01ACD07D70095B124 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		78D82525204E8F9C00CBD9D9 /* EXApiV2Client.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EXApiV2Client.h; sourceTree = "<group>"; };
 		78D82526204E8F9C00CBD9D9 /* EXApiV2Client.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EXApiV2Client.m; sourceTree = "<group>"; };
@@ -661,7 +661,7 @@
 		78CEE2C11ACD07D70095B124 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				78CEE2C01ACD07D70095B124 /* Expo Go.app */,
+				78CEE2C01ACD07D70095B124 /* Rork.app */,
 				B51333401CE649FE00E9FC9E /* ExponentIntegrationTests.xctest */,
 				B505BA0E20CAF77A0046ACFB /* Tests.xctest */,
 				FCF6D36D25B34BC200808BF5 /* ExpoNotificationServiceExtension.appex */,
@@ -1232,7 +1232,7 @@
 			);
 			name = "Expo Go";
 			productName = Exponent;
-			productReference = 78CEE2C01ACD07D70095B124 /* Expo Go.app */;
+			productReference = 78CEE2C01ACD07D70095B124 /* Rork.app */;
 			productType = "com.apple.product-type.application";
 		};
 		B505BA0D20CAF77A0046ACFB /* Tests */ = {
@@ -1307,9 +1307,7 @@
 				TargetAttributes = {
 					78CEE2BF1ACD07D70095B124 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = C8D8QTF339;
 						LastSwiftMigration = 1150;
-						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplePay = {
 								enabled = 0;
@@ -1333,7 +1331,6 @@
 					};
 					B505BA0D20CAF77A0046ACFB = {
 						CreatedOnToolsVersion = 9.4;
-						DevelopmentTeam = C8D8QTF339;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 78CEE2BF1ACD07D70095B124;
 					};
@@ -1343,9 +1340,7 @@
 					};
 					FCF6D36C25B34BC200808BF5 = {
 						CreatedOnToolsVersion = 12.2;
-						DevelopmentTeam = C8D8QTF339;
 						LastSwiftMigration = 1220;
-						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -2085,10 +2080,7 @@
 				LDPLUSPLUS = "";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../../../react-native-lab/react-native/packages/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
@@ -2151,10 +2143,7 @@
 				LD = "";
 				LDPLUSPLUS = "";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../../../react-native-lab/react-native/packages/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -2174,7 +2163,7 @@
 				CODE_SIGN_ENTITLEMENTS = Exponent/Supporting/Exponent.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C8D8QTF339;
+				DEVELOPMENT_TEAM = UZ28QXS4JS;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				EX_BUNDLE_NAME = Expo;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2216,8 +2205,8 @@
 					"-no_objc_category_merging",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/yoga/Yoga.modulemap\" -D DEBUG -D EXPO_CONFIGURATION_DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = host.exp.Exponent;
-				PRODUCT_NAME = "Expo Go";
+				PRODUCT_BUNDLE_IDENTIFIER = rork.app;
+				PRODUCT_NAME = Rork;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRIP_STYLE = "non-global";
 				SWIFT_OBJC_BRIDGING_HEADER = "Exponent-Bridging-Header.h";
@@ -2242,9 +2231,9 @@
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Exponent/Supporting/Exponent.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = C8D8QTF339;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UZ28QXS4JS;
 				EX_BUNDLE_NAME = Expo;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Exponent/Supporting/Exponent-Prefix.pch";
@@ -2266,11 +2255,14 @@
 					"PB_ENABLE_MALLOC=1",
 				);
 				INFOPLIST_FILE = Exponent/Supporting/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				INFOPLIST_KEY_CFBundleDisplayName = Rork;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1;
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DFOLLY_NO_CONFIG",
@@ -2285,9 +2277,9 @@
 					"-no_objc_category_merging",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/yoga/Yoga.modulemap\" -D RELEASE -D EXPO_CONFIGURATION_RELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = host.exp.Exponent;
-				PRODUCT_NAME = "Expo Go";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore host.exp.Exponent";
+				PRODUCT_BUNDLE_IDENTIFIER = rork.app;
+				PRODUCT_NAME = Rork;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRIP_STYLE = "non-global";
 				SWIFT_OBJC_BRIDGING_HEADER = "Exponent-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -2315,7 +2307,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = C8D8QTF339;
+				DEVELOPMENT_TEAM = UZ28QXS4JS;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
@@ -2325,7 +2317,7 @@
 					"@loader_path/Frameworks",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = host.exp.Tests;
+				PRODUCT_BUNDLE_IDENTIFIER = rork.app.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Expo Go.app/Exponent";
@@ -2347,7 +2339,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = C8D8QTF339;
+				DEVELOPMENT_TEAM = UZ28QXS4JS;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
@@ -2357,7 +2349,7 @@
 					"@loader_path/Frameworks",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = host.exp.Tests;
+				PRODUCT_BUNDLE_IDENTIFIER = rork.app.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Expo Go.app/Exponent";
@@ -2372,6 +2364,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = UZ28QXS4JS;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = ExponentIntegrationTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -2381,7 +2374,7 @@
 					"@loader_path/Frameworks",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = host.exp.ExponentIntegrationTests;
+				PRODUCT_BUNDLE_IDENTIFIER = rork.app.ExponentIntegrationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Expo Go.app/Exponent";
 			};
@@ -2395,6 +2388,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = UZ28QXS4JS;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = ExponentIntegrationTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -2404,7 +2398,7 @@
 					"@loader_path/Frameworks",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = host.exp.ExponentIntegrationTests;
+				PRODUCT_BUNDLE_IDENTIFIER = rork.app.ExponentIntegrationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Expo Go.app/Exponent";
 			};
@@ -2424,7 +2418,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = C8D8QTF339;
+				DEVELOPMENT_TEAM = UZ28QXS4JS;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -2441,7 +2435,7 @@
 				MTL_FAST_MATH = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = host.exp.Exponent.ExpoNotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = rork.app.Exponent.ExpoNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -2463,10 +2457,10 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "Apple Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = C8D8QTF339;
+				DEVELOPMENT_TEAM = UZ28QXS4JS;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = ExpoNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
@@ -2478,9 +2472,9 @@
 				MTL_FAST_MATH = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = host.exp.Exponent.ExpoNotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = rork.app.Exponent.ExpoNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore host.exp.Exponent.ExpoNotificationServiceExtension";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OBJC_BRIDGING_HEADER = "ExpoNotificationServiceExtension/ExpoNotificationServiceExtension-Bridging-Header.h";
