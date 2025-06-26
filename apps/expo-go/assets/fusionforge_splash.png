@@ -1,0 +1,9 @@
+# This is a placeholder for fusionforge_splash.png
+# In a real scenario, this would be an actual image file.
+# Content: FusionForge logo/name on a solid background.
+# Background Color: Consistent with FusionForge branding (e.g., dark theme or primary brand color).
+# Image: Centered logo or wordmark.
+# Dimensions: Should be large enough to cover various screen sizes, e.g., 1242x2436 pixels, but Expo splash screen system handles resizing.
+# For this placeholder, the content is just this text.
+This is a conceptual placeholder for the FusionForge splash screen.
+This file would be replaced by an actual PNG image.

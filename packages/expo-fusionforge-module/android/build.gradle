@@ -1,0 +1,53 @@
+// packages/expo-fusionforge-module/android/build.gradle
+apply plugin: 'com.android.library'
+apply plugin: 'org.jetbrains.kotlin.android'
+// This used to be: apply from: '../../../../react-native-lab/react-native/packages/react-native-gradle-plugin/src/main/kotlin/com/facebook/react/codegen/plugin/CodegenPlugin.kt'
+// The path might need adjustment based on actual monorepo structure or how Expo modules are built.
+// For now, relying on standard Expo module build scripts.
+
+// Import the expo-module plugin.
+apply from: new File(["node", "--print", "require.resolve('expo-module-scripts/plugin.gradle')"].execute(null, projectDir).text.trim())
+
+android {
+    compileSdkVersion экспоSdk.compileSdkVersion
+    defaultConfig {
+        minSdkVersion экспоSdk.minSdkVersion
+        targetSdkVersion экспоSdk.targetSdkVersion
+        versionCode 1
+        versionName "1.0.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+    // Dependencies for your module, if any
+    // Example: implementation "com.facebook.react:react-native:+"
+    // Expo modules usually depend on expo-modules-core
+    api project(':expo-modules-core')
+}
+
+group = 'expo.modules.fusionforge'
+version = '1.0.0'
+
+// Configure Kotlin
+// This is often handled by expo-module-scripts/plugin.gradle too
+// tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+//     kotlinOptions {
+//         jvmTarget = "1.8"
+//         freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
+//     }
+// }

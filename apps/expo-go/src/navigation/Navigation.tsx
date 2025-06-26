@@ -3,6 +3,7 @@ import { NavigationContainer, useTheme, useNavigationContainerRef } from '@react
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 import * as React from 'react';
 import { Platform, StyleSheet, Linking } from 'react-native';
+import url from 'url'; // Added for parsing FusionForge connect URLs
 
 import BottomTab, { getNavigatorProps } from './BottomTabNavigator';
 import { HomeStackRoutes, SettingsStackRoutes, ModalStackRoutes } from './Navigation.types';
@@ -167,31 +168,82 @@ export default (props: { theme: ColorTheme }) => {
   const initialURLWasConsumed = React.useRef(false);
 
   React.useEffect(() => {
-    const handleDeepLinks = async ({ url }: { url: string | null }) => {
-      if (Platform.OS === 'ios' || !url || !isNavigationReadyRef.current) {
-        return;
+    const handleFusionForgeLink = (linkUrl: string): boolean => {
+      if (!linkUrl) return false;
+
+      const parsedUrl = url.parse(linkUrl, true); // true to parse query string
+      if (parsedUrl.protocol === 'exp:' && parsedUrl.hostname === 'fusionforge-connect') {
+        const projectUrl = parsedUrl.query?.projectUrl;
+        if (projectUrl && typeof projectUrl === 'string') {
+          try {
+            const decodedProjectUrl = decodeURIComponent(projectUrl);
+            console.log(`FusionForge Dev Client: Attempting to open project: ${decodedProjectUrl}`);
+            // Ensure it's a valid Expo project URL before opening
+            // This is a basic check, a more robust validation might be needed
+            if (decodedProjectUrl.startsWith('exp:') || decodedProjectUrl.startsWith('exps:') || decodedProjectUrl.startsWith('http:') || decodedProjectUrl.startsWith('https:')) {
+              Linking.openURL(decodedProjectUrl).catch(err => {
+                console.error("FusionForge Dev Client: Failed to open project URL via deep link", err);
+                // Optionally, navigate to an error screen or show a toast
+              });
+              return true; // Indicates the link was handled
+            } else {
+              console.warn(`FusionForge Dev Client: Invalid projectUrl format: ${decodedProjectUrl}`);
+            }
+          } catch (e) {
+            console.error(`FusionForge Dev Client: Error decoding projectUrl: ${projectUrl}`, e);
+          }
+        } else {
+          console.warn(`FusionForge Dev Client: projectUrl not found in deep link: ${linkUrl}`);
+        }
       }
-      const nav = navigationRef.current;
-      if (!nav) {
+      return false; // Link was not a FusionForge connect link or was invalid
+    };
+
+    const handleDeepLinks = async ({ url: linkUrl }: { url: string | null }) => {
+      if (!linkUrl || !isNavigationReadyRef.current) {
         return;
       }
 
-      if (url.startsWith('expo-home://qr-scanner')) {
-        if (await requestCameraPermissionsAsync()) {
-          nav.navigate('QRCode');
-        } else {
-          await alertWithCameraPermissionInstructions();
+      // Attempt to handle as a FusionForge connect link first
+      if (handleFusionForgeLink(linkUrl)) {
+        return; // FusionForge link handled, stop further processing
+      }
+
+      // Existing deep link logic (e.g., for QR scanner)
+      // Note: Original code had Platform.OS === 'ios' check here, but this useEffect also runs getInitialURL.
+      // Re-evaluating if that platform check is strictly necessary for this part or was for something else.
+      // For now, keeping the structure, but FusionForge link handles for all platforms.
+      if (Platform.OS === 'android' || Platform.OS === 'ios') { // Modified to include iOS for general deep links if not FF
+        const nav = navigationRef.current;
+        if (!nav) {
+          return;
         }
+        if (linkUrl.startsWith('expo-home://qr-scanner')) {
+          if (await requestCameraPermissionsAsync()) {
+            nav.navigate('QRCode');
+          } else {
+            await alertWithCameraPermissionInstructions();
+          }
+        }
+        // Potentially other non-FusionForge, non-QR scanner deep links could be handled here if needed
       }
     };
+
     if (!initialURLWasConsumed.current) {
       initialURLWasConsumed.current = true;
-      Linking.getInitialURL().then((url) => {
-        handleDeepLinks({ url });
+      Linking.getInitialURL().then((initialUrl) => {
+        if (initialUrl) {
+          // Try to handle initial URL as FusionForge link first
+          if (handleFusionForgeLink(initialUrl)) {
+            return;
+          }
+          // If not a FusionForge link, proceed with other deep link handling
+          handleDeepLinks({ url: initialUrl });
+        }
       });
     }
 
-    const deepLinkSubscription = Linking.addEventListener('url', handleDeepLinks);
+    const deepLinkSubscription = Linking.addEventListener('url', (event) => handleDeepLinks({ url: event.url }));
 
     return () => {
       isNavigationReadyRef.current = false;

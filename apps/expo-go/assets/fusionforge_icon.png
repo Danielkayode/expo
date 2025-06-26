@@ -1,0 +1,11 @@
+# This is a placeholder for fusionforge_icon.png
+# In a real scenario, this would be an actual image file.
+# For now, its existence and path are what matter.
+# Dimensions should ideally be 1024x1024 for adaptive icons and app store.
+# Content: A simple solid color or a basic geometric shape.
+# Color: FusionForge primary color (e.g., a deep purple or a vibrant blue)
+# Shape: Square with rounded corners (standard app icon shape)
+# Text (optional, if image is simple enough): "FF" or a simple logo mark.
+# For this placeholder, the content is just this text.
+This is a conceptual placeholder for the FusionForge icon.
+This file would be replaced by an actual PNG image.

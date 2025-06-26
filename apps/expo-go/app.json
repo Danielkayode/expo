@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "rork",
-    "description": "",
+    "name": "FusionForge Dev Client",
+    "description": "Development client for FusionForge platform.",
     "owner": "rork-app",
     "slug": "mobile",
     "privacy": "unlisted",
@@ -13,7 +13,12 @@
       "android"
     ],
     "primaryColor": "#cccccc",
-    "icon": "https://s3.amazonaws.com/exp-brand-assets/ExponentEmptyManifest_192.png",
+    "icon": "./assets/fusionforge_icon.png",
+    "splash": {
+      "image": "./assets/fusionforge_splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FFFFFF"
+    },
     "userInterfaceStyle": "automatic",
     "ios": {
       "supportsTablet": true,
