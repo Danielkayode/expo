@@ -2,7 +2,7 @@
   "expo": {
     "name": "FusionForge Dev Client",
     "description": "Development client for FusionForge platform.",
-    "owner": "rork-app",
+    "owner": "fusionforge",
     "slug": "mobile",
     "privacy": "unlisted",
     "sdkVersion": "52.0.0",
@@ -22,7 +22,7 @@
     "userInterfaceStyle": "automatic",
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "host.exp.exponent"
+      "bundleIdentifier": "app.fusionforge.expo"
     },
     "android": {
       "package": "host.exp.exponent"

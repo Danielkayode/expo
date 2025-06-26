@@ -2202,7 +2202,7 @@
 					"-no_objc_category_merging",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/yoga/Yoga.modulemap\" -D DEBUG -D EXPO_CONFIGURATION_DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = app.rork.expo;
+				PRODUCT_BUNDLE_IDENTIFIER = app.fusionforge.expo;
 				PRODUCT_NAME = "Expo Go";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRIP_STYLE = "non-global";
@@ -2271,7 +2271,7 @@
 					"-no_objc_category_merging",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/yoga/Yoga.modulemap\" -D RELEASE -D EXPO_CONFIGURATION_RELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = app.rork.expo;
+				PRODUCT_BUNDLE_IDENTIFIER = app.fusionforge.expo;
 				PRODUCT_NAME = "Expo Go";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRIP_STYLE = "non-global";
@@ -2427,7 +2427,7 @@
 				MTL_FAST_MATH = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = app.rork.expo.ExpoNotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = app.fusionforge.expo.ExpoNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -2464,7 +2464,7 @@
 				MTL_FAST_MATH = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = app.rork.expo.ExpoNotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = app.fusionforge.expo.ExpoNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
